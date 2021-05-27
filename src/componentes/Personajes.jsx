@@ -4,29 +4,27 @@ import { useEffect, useState } from "react";
 
 
 export const Personajes = () => {
-     
-    const {name} = useParams()
-    console.log(name)
-
+    const {results} = useParams()
+    console.log(results)
 
     const [detalle, setDetalle] = useState([]);
-
+   
     useEffect(() => {
       obtenerDatos();
     }, []);
   
     const obtenerDatos = async () => {
-      const data = await fetch(`https://swapi.dev/api/people/`);
+      const data = await fetch(`https://swapi.dev/api/people/${results}`);
       const personajes = await data.json();
       const personajesItem = personajes.results;
+      console.log(personajes)
       console.log(personajesItem)
       setDetalle(personajesItem);
-  
     };
 
     return (
         <div>
-     <h3>{detalle.name}</h3>
+     <h3>Probando {detalle}</h3>
      
               
         </div>

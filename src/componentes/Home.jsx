@@ -13,20 +13,21 @@ const Home = () => {
     const data = await fetch("https://swapi.dev/api/people/");
     const personajes = await data.json();
     const personajesItem = personajes.results;
-    console.log(personajesItem)
+    console.log(personajesItem);
     setPersonajes(personajesItem);
-
   };
 
   return (
-    <div className="fondo">
-      <ul>
+    <div>
+
+      <div className="fondo">
+      <h2 className="titulo">Star Wars</h2>
         {personajes.map((item) => (
-          <li key={item.name}>
+          <ul className="lista" key={item.name}>
             <Link to={`/people/${item.name}`}>{item.name}</Link>
-          </li>
+          </ul>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

@@ -9,8 +9,6 @@ import {
 import { Personajes } from './componentes/Personajes'
 
 
-
-
 function App() {
 
   return (
@@ -19,7 +17,7 @@ function App() {
    <Route exact path="/">
       <Home></Home>
      </Route>
-     <Route  path="/people/:name">
+     <Route  path="/people/:results">
     <Personajes></Personajes>
      </Route>
 
